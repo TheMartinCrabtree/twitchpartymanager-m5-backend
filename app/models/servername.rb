@@ -1,0 +1,2 @@
+class Servername < ApplicationRecord
+end

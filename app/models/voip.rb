@@ -1,0 +1,2 @@
+class Voip < ApplicationRecord
+end
