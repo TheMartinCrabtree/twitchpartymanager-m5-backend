@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eventname: MyString
+  dateandtime: 2019-10-30 15:34:39
+  serverinfo: MyString
+  voip: MyString
+  eventnote: MyText
+
+two:
+  eventname: MyString
+  dateandtime: 2019-10-30 15:34:39
+  serverinfo: MyString
+  voip: MyString
+  eventnote: MyText

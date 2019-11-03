@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ingamename: MyString
+  inparty: false
+  waitlist: false
+  user: one
+  event: one
+
+two:
+  ingamename: MyString
+  inparty: false
+  waitlist: false
+  user: two
+  event: two
