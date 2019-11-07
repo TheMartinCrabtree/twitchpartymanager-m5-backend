@@ -1,5 +1,5 @@
 class SignupsController < ApplicationController
-  before_action :set_signup, only: [:show, :update, :destroy]
+  before_action :set_signup, only: [:show, :update, :destroy, :cancel]
   def update
   end
 
@@ -13,8 +13,16 @@ class SignupsController < ApplicationController
   end
 
   def destroy
+    
 
   end
+
+  def cancel
+    
+    @eventArr = Joinuserevent.where(user_id: params[:user_id], event_id: params[:event_id])
+    @eventArr.each do |event| event.destroy end 
+  end
+
 
   private
   def set_signup
