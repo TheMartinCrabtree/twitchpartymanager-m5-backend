@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'signups/update'
+  get 'signups/create'
+  get 'signups/show'
   resources :joinuserevents
   resources :users
     
@@ -6,6 +9,7 @@ Rails.application.routes.draw do
   resources :servernames
   resources :voips
   resources :events
+  resources :signups
 
   get '/persist', to: 'auth#persist'
   post '/login', to: 'auth#login'
