@@ -40,7 +40,8 @@ class AuthController < ApplicationController
                 user = User.find_by(twitch_sub: userInfoReq["sub"])
                 render json: {user: user}
             else
-                user = User.create(twitch_sub: userInfoReq["sub"], username: userInfoReq["preferred_username"])
+                # admin set to true for testing
+                user = User.create(twitch_sub: userInfoReq["sub"], username: userInfoReq["preferred_username"], administrator: true )
                 render json: {user: user}
             end
 
