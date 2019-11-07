@@ -22,6 +22,12 @@ gem 'active_model_serializers'
 # JWT
 gem 'jwt'
 
+#OAUTH
+gem 'oauth2'
+
+#FOR API HTTP REQUESTS
+gem 'faraday'
+
 # Make super secret
 gem 'dotenv-rails'
 
@@ -36,6 +42,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
+
+#for making foreign API requests
+gem 'rest-client'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
