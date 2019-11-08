@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'signups/update'
   get 'signups/create'
   get 'signups/show'
+  patch "signups/cancel"
   resources :joinuserevents
   resources :users
     
