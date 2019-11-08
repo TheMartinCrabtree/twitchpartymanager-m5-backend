@@ -7,9 +7,14 @@ class SignupsController < ApplicationController
   end
 
   def show
-      @signup = Joinuserevent.where(user_id: params[:id] )
-  
-      render json: @signup
+      if(params[:id])
+        @signup = Joinuserevent.where(user_id: params[:id] )
+        # @signup = signup.map do |event_ref| 
+        #     return event_ref.event
+        # end
+        render json: @signup
+      end
+      
   end
 
   def destroy
