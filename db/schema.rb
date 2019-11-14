@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_10_30_201134) do
     t.string "username"
     t.bigint "twitch_sub"
     t.string "password_digest"
+    t.string "avatar_img"
     t.boolean "subscriber"
     t.boolean "follower"
     t.boolean "administrator"

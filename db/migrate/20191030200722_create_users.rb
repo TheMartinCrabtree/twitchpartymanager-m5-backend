@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :username
       t.bigint :twitch_sub
       t.string :password_digest
+      t.string :avatar_img
       t.boolean :subscriber
       t.boolean :follower
       t.boolean :administrator

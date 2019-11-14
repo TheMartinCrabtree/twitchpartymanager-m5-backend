@@ -35,13 +35,19 @@ class AuthController < ApplicationController
             userInfoReq = RestClient.get("https://id.twitch.tv/oauth2/userinfo", {:Authorization => "Bearer " +  accesstoken})
             userInfoReq=JSON.parse(userInfoReq)
 
+
             # Check for existing user, create if none
             if (User.find_by(twitch_sub: userInfoReq["sub"]))
                 user = User.find_by(twitch_sub: userInfoReq["sub"])
                 render json: {user: user}
             else
-                # admin set to true for testing
-                user = User.create(twitch_sub: userInfoReq["sub"], username: userInfoReq["preferred_username"], administrator: true )
+                is_admin = false
+                if(userInfoReq["sub"]===admin_id)
+                    is_admin = true
+                end
+                
+                user = User.create(twitch_sub: userInfoReq["sub"], username: userInfoReq["preferred_username"], administrator: is_admin, avatar_img: userInfoReq["picture"] )
+                
                 render json: {user: user}
             end
 
@@ -77,6 +83,10 @@ class AuthController < ApplicationController
 
     def secretkey
       ENV["TWITCH"]
+    end
+
+    def admin_id
+        ENV["ADMINID"]
     end
 
 end

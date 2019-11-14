@@ -16,9 +16,9 @@ class AnnouncementsController < ApplicationController
   # POST /announcements
   def create
     @announcement = Announcement.new(announcement_params)
-
+    
     if @announcement.save
-      render json: @announcement, status: :created, location: @announcement
+      render json: {announcement: @announcement}
     else
       render json: @announcement.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class AnnouncementsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def announcement_params
-      params.require(:announcement).permit(:title, :bodytext, :user_id)
+      params.require(:announcement).permit(:title, :bodytext)
     end
 end
