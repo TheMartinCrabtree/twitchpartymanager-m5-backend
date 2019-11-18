@@ -5,7 +5,7 @@ class AnnouncementsController < ApplicationController
   def index
     @announcements = Announcement.all
 
-    render json: @announcements
+    render json: {announcements: @announcements}
   end
 
   # GET /announcements/1
@@ -35,7 +35,8 @@ class AnnouncementsController < ApplicationController
 
   # DELETE /announcements/1
   def destroy
-    @announcement.destroy
+     @annref = Announcement.find(params[:id].to_s)
+    @annref.destroy
   end
 
   private
@@ -46,6 +47,6 @@ class AnnouncementsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def announcement_params
-      params.require(:announcement).permit(:title, :bodytext)
+      params.require(:announcement).permit(:title, :bodytext, :id)
     end
 end
